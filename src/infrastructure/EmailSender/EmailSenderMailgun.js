@@ -12,7 +12,7 @@ export class EmailSenderMailgun extends EmailSender {
         formdata.append("from", "Excited User <mailgun@sandboxaaadf81e097c4215bc6a704230a2bf71.mailgun.org>");
         formdata.append("to", superSecretEmail);
         formdata.append("subject", "Hello uwu");
-        formdata.append("text", "Testing some Mailgun awesomeness!");
+        formdata.append("text", "Testing some Meowgun pawsomeness!");
 
         const fetchResult = await fetch("https://api.mailgun.net/v3/sandboxaaadf81e097c4215bc6a704230a2bf71.mailgun.org/messages", {
             method: 'POST',
