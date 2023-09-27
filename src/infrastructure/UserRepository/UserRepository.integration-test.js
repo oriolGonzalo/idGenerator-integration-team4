@@ -1,12 +1,16 @@
 import { describe, it, expect, beforeEach, beforeAll, afterAll } from "vitest"
 import { UserRepositoryMongo } from "./UserRepositoryMongo.js"
 import { User } from "../../domain/models/User.js"
+import { UserRepositoryPostgresSQL } from "./UserRepositoryPostgresSQL.js"
 
-describe("UserRepositoryMongo", () => {
+describe.each([
+  ["Mongo", UserRepositoryMongo],
+  ["PostgresSQL", UserRepositoryPostgresSQL],
+])("UserRepository%s", (name, UserRepository) => {
   let userRepository
 
   beforeAll(async () => {
-    userRepository = new UserRepositoryMongo()
+    userRepository = new UserRepository()
     await userRepository.connect()
   })
 
