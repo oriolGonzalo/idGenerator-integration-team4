@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest"
 import { EmailSenderMailgun } from "./EmailSenderMailgun"
 import { User } from "../../domain/models/User"
-import { UserEmail } from "../../domain/models/UserEmail"
 import { config } from "../Shared/config"
 import { TestInbox } from "./TestInbox"
 
