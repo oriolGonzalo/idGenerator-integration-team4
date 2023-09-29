@@ -2,15 +2,16 @@ import { Client } from "pg"
 import { UserRepository } from "../../domain/repository/UserRepository.js"
 import { User } from "../../domain/models/User.js"
 import { UserPassword } from "../../domain/models/UserPassword.js"
+import { config } from "../Shared/config.js"
 
 export class UserRepositoryPostgresSQL extends UserRepository {
   constructor() {
     super()
     this.client = new Client({
-      user: "admin",
-      host: "localhost",
-      database: "my-project",
-      password: "password",
+      user: config.postgreSQl.user,
+      host: config.postgreSQl.host,
+      database: config.postgreSQl.database,
+      password: config.postgreSQl.password,
     })
   }
 

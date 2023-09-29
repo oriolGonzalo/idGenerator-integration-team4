@@ -38,4 +38,8 @@ export class User {
   getPassword() {
     return this.password
   }
+
+  setEmail(email) {
+    this.email = email
+  }
 }
